@@ -1,0 +1,17 @@
+*.pem
+*.ppk
+.env
+.env.*
+.aws/
+credentials
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.zip
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars

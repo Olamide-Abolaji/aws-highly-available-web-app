@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CloudNova — Build. Scale. Stay Available.</title>
+  <meta name="description" content="CloudNova demo application for a highly available AWS architecture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav wrap">
+    <a class="brand" href="#"><span class="brandmark">C</span>CloudNova</a>
+    <nav>
+      <a href="#platform">Platform</a><a href="#architecture">Architecture</a><a href="#reliability">Reliability</a>
+    </nav>
+    <a class="nav-btn" href="#status">Live status <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> Infrastructure online</div>
+        <h1>Build. Scale.<br><span>Stay available.</span></h1>
+        <p>CloudNova is a production-style web experience engineered to demonstrate resilient cloud architecture on AWS.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#architecture">Explore architecture <span>→</span></a>
+          <a class="secondary" href="#status">View live server</a>
+        </div>
+        <div class="mini-proof">
+          <div><strong>99.99%</strong><small>Availability target</small></div>
+          <div><strong>Multi-AZ</strong><small>Fault tolerance</small></div>
+          <div><strong>Auto</strong><small>Elastic scaling</small></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="console glass">
+          <div class="console-top"><div><i></i><i></i><i></i></div><span>cloudnova / production</span><b>● LIVE</b></div>
+          <div class="terminal">
+            <p><em>$</em> checking infrastructure...</p>
+            <p class="success">✓ Application healthy</p>
+            <p class="success">✓ Load balancer connected</p>
+            <p class="success">✓ Auto Scaling enabled</p>
+          </div>
+          <div class="traffic">
+            <div class="traffic-head"><span>Live traffic</span><b>+28.4%</b></div>
+            <div class="bars">
+              <i style="--h:35%"></i><i style="--h:48%"></i><i style="--h:42%"></i><i style="--h:64%"></i>
+              <i style="--h:55%"></i><i style="--h:78%"></i><i style="--h:69%"></i><i style="--h:88%"></i>
+              <i style="--h:72%"></i><i style="--h:92%"></i><i style="--h:80%"></i><i style="--h:96%"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="status-wrap wrap">
+      <div class="section-tag">LIVE INFRASTRUCTURE</div>
+      <div class="status-card glass">
+        <div class="status-intro">
+          <span class="status-icon">⌁</span>
+          <div><h3>This request was served by</h3><p>Refresh the page as traffic moves between instances.</p></div>
+        </div>
+        <div class="server-grid">
+          <div><small>INSTANCE ID</small><strong id="instance">Loading...</strong></div>
+          <div><small>AVAILABILITY ZONE</small><strong id="az">Loading...</strong></div>
+          <div><small>PRIVATE IP</small><strong id="ip">Loading...</strong></div>
+          <div><small>STATUS</small><strong class="healthy"><span class="pulse"></span> Healthy</strong></div>
+        </div>
+      </div>
+      <p class="demo-note">Tip: Put multiple instances behind your ALB, then refresh this page to watch requests move across your infrastructure.</p>
+    </section>
+
+    <section id="platform" class="features wrap">
+      <div class="section-heading">
+        <div class="section-tag">BUILT FOR RESILIENCE</div>
+        <h2>Cloud infrastructure that<br>doesn't blink.</h2>
+        <p>Every layer is designed to keep the application responsive when demand changes—or infrastructure fails.</p>
+      </div>
+      <div class="feature-grid">
+        <article><div class="ficon">↗</div><h3>Elastic compute</h3><p>EC2 instances provide flexible compute capacity that grows with your workload.</p><span>Amazon EC2 →</span></article>
+        <article><div class="ficon">⇄</div><h3>Balanced traffic</h3><p>Incoming requests are intelligently distributed across healthy application targets.</p><span>Application Load Balancer →</span></article>
+        <article><div class="ficon">⌁</div><h3>Automatic recovery</h3><p>Unhealthy capacity can be replaced automatically to maintain desired availability.</p><span>EC2 Auto Scaling →</span></article>
+        <article><div class="ficon">◎</div><h3>Global DNS</h3><p>Reliable DNS routing connects your domain to the application entry point.</p><span>Amazon Route 53 →</span></article>
+      </div>
+    </section>
+
+    <section id="architecture" class="architecture">
+      <div class="wrap">
+        <div class="section-heading centered">
+          <div class="section-tag">THE ARCHITECTURE</div>
+          <h2>One request. Multiple layers<br>of resilience.</h2>
+        </div>
+        <div class="arch-flow">
+          <div class="arch-node"><span>◎</span><b>Route 53</b><small>DNS</small></div>
+          <div class="connector"><i></i><b>→</b></div>
+          <div class="arch-node glow"><span>⇄</span><b>Application LB</b><small>Traffic distribution</small></div>
+          <div class="connector"><i></i><b>→</b></div>
+          <div class="az-box">
+            <label>AUTO SCALING GROUP</label>
+            <div>
+              <div class="arch-node"><span>▣</span><b>EC2</b><small>AZ — A</small></div>
+              <div class="arch-node"><span>▣</span><b>EC2</b><small>AZ — B</small></div>
+            </div>
+          </div>
+        </div>
+        <p class="arch-caption">If one instance becomes unhealthy, the load balancer routes traffic to healthy targets while Auto Scaling restores capacity.</p>
+      </div>
+    </section>
+
+    <section id="reliability" class="metrics wrap">
+      <div class="metric"><strong>2+</strong><span>Availability Zones</span></div>
+      <div class="metric"><strong>&lt;1m</strong><span>Scale-out response*</span></div>
+      <div class="metric"><strong>24/7</strong><span>Health monitoring</span></div>
+      <div class="metric"><strong>∞</strong><span>Built to scale</span></div>
+    </section>
+
+    <section class="cta wrap">
+      <div>
+        <div class="section-tag">READY TO SHIP?</div>
+        <h2>Resilience isn't a feature.<br><span>It's the foundation.</span></h2>
+        <p>CloudNova is running on infrastructure designed for availability, scalability and recovery.</p>
+        <a class="primary" href="#status">Check server status <span>→</span></a>
+      </div>
+      <div class="rings"><i></i><i></i><i></i><b>CN</b></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <a class="brand" href="#"><span class="brandmark">C</span>CloudNova</a>
+    <p>Highly Available AWS Web Application Demo</p>
+    <span>Built for the cloud ☁</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

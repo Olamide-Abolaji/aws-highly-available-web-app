@@ -1,0 +1,15 @@
+[Unit]
+Description=CloudNova Web Application
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/opt/cloudnova
+ExecStart=/usr/bin/python3 /opt/cloudnova/server.py
+Restart=always
+RestartSec=3
+Environment=PORT=8080
+
+[Install]
+WantedBy=multi-user.target
