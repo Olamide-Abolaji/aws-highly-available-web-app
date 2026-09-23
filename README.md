@@ -1,4 +1,4 @@
-# ☁️ CloudNova — Highly Available Web Application on AWS
+# CloudNova — Highly Available Web Application on AWS
 
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
 ![EC2](https://img.shields.io/badge/Amazon-EC2-orange)
